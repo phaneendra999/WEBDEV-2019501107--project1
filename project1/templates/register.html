@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+  
+}
+<label
+
+* {
+  box-sizing: border-box;
+}
+
+
+.container {
+  padding: 16px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+input[type=email],input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 2px;
+  display: inline-block;
+  border: none;
+  background:rgb(51, 185, 151);
+}
+
+input[type=email]:focus,input[type=text]:focus, input[type=password]:focus {
+  background-color: grey;
+  outline: none;
+}
+
+
+
+/* hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 50px;
+} */
+
+
+.registerbtn {
+  background-color: #4CAF50;
+  color: white;
+  float: center;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 25%;
+  /* opacity: 0.9; */
+}
+
+.registerbtn:hover {
+  opacity: 0.9;
+}
+
+
+
+</style>
+</head>
+<body>
+
+  <form  action ="{{url_for('register')}}", method = "POST">
+  <div class="container">
+    <h1>Register</h1>
+    
+    <p>Create your account please</p>
+    <h2>{{text}}</h2>
+    
+
+    <label for="name"><b>First Name</b></label>
+    <input type="text" placeholder="Enter your name" name="name" required>
+
+
+    <label for="email"><b>Email</b></label> 
+    <input type="email" placeholder="Enter your Email" name="email" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+    <button type="submit" class="registerbtn" >Register</button>
+   <p>Already have an account?,then LOGIN</p> <button type="submit" formaction="{{url_for('authentication')}}"  class="registerbtn">Login</button>
+
+  </div>
+</form>
+</body>
+</html>
+

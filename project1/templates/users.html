@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <style>
+            table {
+                border:2px;
+                border-collapse: collapse;
+                /* background-color: black; */
+                padding:15px;
+            }
+            body {
+                background-color:rgb(0, 128, 100);
+            }
+            th,td {
+                padding:10px;
+                color:white;
+            }
+            th{
+                background-color: black;
+            }
+        </style>
+    </head>
+    <body style = "font-size: large;">
+    <h1 style = "text-align: center;">All the Registered Users</h1><br>
+    <table border = 1 align = "center">
+        <th> {{"User Name"}}</th>
+        <th>{{"User Email"}}</th>
+        <th>{{"Password"}}</th>
+        <th>{{"Creation Time"}}</th>
+        {% for item in data %}
+         <tr>
+             <td> {{item.name}}</td>
+             <td> {{item.email}}</td>
+             <td> {{item.password}}</td>
+             <td> {{item.timestamp}}</td>
+            </tr>
+         {% endfor %}   
+    </table>
+    </body>
+</html>
